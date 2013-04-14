@@ -4,6 +4,8 @@
  */
 package com3014.models;
 
+import java.util.Date;
+
 /**
  *
  * @author vk00050
@@ -14,7 +16,7 @@ public class User {
     private int id;
     private String name;
     private String surname;
-    private String dateOfBirth;
+    private Date dateOfBirth;
     private String email;
     private String username;
     private String password;
@@ -44,11 +46,11 @@ public class User {
         this.surname = surname;
     }
 
-    public String getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
