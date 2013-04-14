@@ -1,0 +1,65 @@
+/* 
+    Document   : styling
+    Created on : 31 Οκτ 2011, 12:38:06 πμ
+    Author     : Marios
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+/* in this file we have all the styling rules that are needed for the index and the output*/
+
+
+
+form div{
+    clear:left;
+    padding-top:0.6em;
+}
+
+form div label{
+    float:left;
+    width:20%;
+}
+
+.title{
+    float:left;
+    padding:0 5px;
+    margin:-10px 0 0 20px;
+
+    background-color: #ffcc00;
+}
+.bold{
+    font-weight: bolder;
+    color: #cc0000;
+    font-style: italic;
+}
+.gold{
+
+    color: #ffcc00;
+}
+.sub{
+
+    font-size: 22px;
+}
+.sub2{
+
+    font-size: 30px;
+    color: #cc0000;
+}
+.succes{
+    background-image: url(picbackg.gif);
+    border-right-style: solid;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    position: relative;
+    text-align: justify;
+   	left:50%;
+	width:600px;
+	margin-top:50px;
+	margin-left:-266px;
+   
+}
