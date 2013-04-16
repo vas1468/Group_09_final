@@ -3,43 +3,44 @@
  * and open the template in the editor.
  */
 
-
-//vadidates  the name of the form given
-
-            
+var password; 
+//vadidates  the name of the form given     
 function validateName(){
-    //declared a local variable called studentName which will be used to get the value of the element with the id 'name'
-    var studentName; 
+    //declared a local variable called Name which will be used to get the value of the element with the id 'name'
+    var Name; 
     //gets the value of the id "name"
-    studentName=document.getElementById('name').value;  
-    //declared a boolean with the name "correctName" and gave it the default value true
+    Name=document.getElementById('name').value;  
+    //declared a boolean with the name "correctName" and gave it the default value false
     var correctName=false;
-    //if there is no studentName  then return an apropriate message and set the correct name as false
-    if(/^(?! )((?!  )(?! $)[a-zA-Z ]){3,50}$/.test(studentName)){
-         document.getElementById('Error1').innerHTML="<b>\u221A </b>";
+    //The name must be at least 3 chatacters and must not have any digits in it or special characters 
+    if(/^(?! )((?!  )(?! $)[a-zA-Z ]){3,50}$/.test(Name)){
+         document.getElementById('Error1').style.display='none';
+         document.getElementById('okk').style.display='block';
         correctName=true;
     }
-    //else return a tick message and return the corectName as true 
+    //if not valid then  display the appopriate message
     else {
+        document.getElementById('Error1').style.display='block';
         document.getElementById('Error1').innerHTML="<b>Enter a valid name</b>";
+        document.getElementById('okk').style.display='none';
         correctName=false;
     }   
     return correctName;
 }
 
 function validateSurname(){
-    //declared a local variable called studentName which will be used to get the value of the element with the id 'name'
-    var studentSurname; 
+    //declared a local variable called Surname which will be used to get the value of the element with the id 'name'
+    var Surname; 
     //gets the value of the id "name"
-    studentSurname=document.getElementById('surname').value;  
-    //declared a boolean with the name "correctName" and gave it the default value true
+    Surname=document.getElementById('surname').value;  
+    //declared a boolean with the name "correctName" and gave it the default value false
     var correctName=false;
-    //if there is no studentName  then return an apropriate message and set the correct name as false
-    if(/^(?! )((?!  )(?! $)[a-zA-Z ]){3,50}$/.test(studentSurname)){
+    //The surname must be at least 3 chatacters and must not have any digits in it or special characters 
+    if(/^(?! )((?!  )(?! $)[a-zA-Z ]){3,50}$/.test(Surname)){
          document.getElementById('Error2').innerHTML="<b>\u221A </b>";
         correctName=true;
     }
-    //else return a tick message and return the corectName as true 
+    //If the surname is not valid then display the appropriate message.
     else {
         document.getElementById('Error2').innerHTML="<b>Enter a valid surname</b>";
         correctName=false;
@@ -47,18 +48,18 @@ function validateSurname(){
     return correctName;
 }
 function validateUsername(){
-    //declared a local variable called studentName which will be used to get the value of the element with the id 'name'
+    //declared a local variable called usename which will be used to get the value of the element with the id 'username'
     var username; 
     //gets the value of the id "name"
     username=document.getElementById('username').value;  
-    //declared a boolean with the name "correctName" and gave it the default value true
+    //declared a boolean with the name "correctName" and gave it the default value false
     var correctUsername=false;
-    //if there is no studentName  then return an apropriate message and set the correct name as false
+    //The username must be at least one character.It may have characters and digits but no special characters.
     if(/^[a-zA-Z0-9]+$/.test(username)){
          document.getElementById('Error3').innerHTML="<b>\u221A </b>";
         correctUsername=true;
     }
-    //else return a tick message and return the corectName as true 
+    //i the username is not valid then display the appropriate message.
     else {
         document.getElementById('Error3').innerHTML="<b>Enter a valid username</b>";
         correctName=false;
@@ -66,18 +67,18 @@ function validateUsername(){
     return correctUsername;
 }
 function validateEmail(){
-    //declared a local variable called studentName which will be used to get the value of the element with the id 'name'
+    //declared a local variable called email which will be used to get the value of the element with the id 'email'
     var email; 
     //gets the value of the id "name"
     email=document.getElementById('email').value;  
-    //declared a boolean with the name "correctName" and gave it the default value true
+    //declared a boolean with the name "correctEmail" and gave it the default value false
     var correctEmail=false;
-    //if there is no studentName  then return an apropriate message and set the correct name as false
+    //if the email is valid the return a tick
     if(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
          document.getElementById('Error4').innerHTML="<b>\u221A </b>";
         correctEmail=true;
     }
-    //else return a tick message and return the corectName as true 
+    //if the email is not valid then return the appropriate message
     else {
         document.getElementById('Error4').innerHTML="<b>The email you entered is not valid</b>";
         correctEmaile=false;
@@ -87,59 +88,56 @@ function validateEmail(){
 
 
 
-function validatPassword(){
-    //declared a local variable called studentName which will be used to get the value of the element with the id 'name'
-    var password; 
-    //gets the value of the id "name"
+function validatePassword(){
+    //declared a local variable called password which will be used to get the value of the element with the id 'password'
+    //gets the value of the id "password"
     password=document.getElementById('password').value;  
-    //declared a boolean with the name "correctName" and gave it the default value true
+    //declared a boolean with the name "correctPassword" and gave it the default value true
     var correctPassword=false;
-    //if there is no studentName  then return an apropriate message and set the correct name as false
-    if(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
+    //Password must be at least 6 characters, no more than 17 characters, and must include
+    //at least one upper case letter, one lower case letter, and one numeric digit.
+    if(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,17}$/.test(password)){
          document.getElementById('Error5').innerHTML="<b>\u221A </b>";
         correctPassword=true;
     }
     //else return a tick message and return the corectName as true 
     else {
-        document.getElementById('Error5').innerHTML="<b>The email you entered is not valid</b>";
+        document.getElementById('Error5').innerHTML="<b>The password you entered is not valid</b>";
         correctPassword=false;
     }   
     return correctPassword;
 }
 
 
-function validatePresentation(){
-    //declared a local variable called present which will be used to get the value of the element with the id 'presentation'
-    var present;
-    //declared a local variable called parsePresent which will be used to store the value of 'present' later
-    var parsePresent;
-    //gets the string value of the element 'presentation'
-    present=document.getElementById('presentation');
-    //declared a boolean with the name "correctPresentation" and gave it the default value true
-    var correctPresentation=true;
-    //check that the String is consisted only by digits and 1 "."
-    if(/^[0-9]*[.]?[0-9]+$/.test(present.value)){
-        //convert the Sting to Float and then parse it into parsePresent
-        parsePresent=parseFloat(present.value);  
-        //check if the parsed value is a number or if it is out of bounds. If one of these applys then return an error
-        // and set the Presentation marks as false
-        if (isNaN(parsePresent)||((parsePresent<0)||(parsePresent>100))){
-            document.getElementById('Error2').innerHTML="<b>Score must be between 0-100!</b>";
-            correctPresentation=false;
-        }
-        else{
-            //else put a tick
-            document.getElementById('Error2').innerHTML="\u221A";
-        }                  
+
+     function confirmPassword(){
+    //declared a local variable called password which will be used to get the value of the element with the id 'password'
+    var confirmPassword; 
+    //gets the value of the id "password"
+    confirmPassword=document.getElementById('cpassword').value;  
+    //declared a boolean with the name "correctPassword" and gave it the default value true
+    var correctPassword=false;
+    //Password must be at least 6 characters, no more than 17 characters, and must include
+    //at least one upper case letter, one lower case letter, and one numeric digit.
+   if(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,17}$/.test(password)){  
+   //check if the password matches the previous password
+   if(confirmPassword==password){
+         document.getElementById('Error6').innerHTML="<b>\u221A </b>";
+        correctPassword=true;
     }
-    else{
-        //this is the else for the regex statment. If the regex statment is not true then set the presentation to be wrong
-        correctPresentation=false;
-        document.getElementById('Error2').innerHTML="<b>Score must be numerical and between 0-100!</b>";
-    }
-    return correctPresentation;
-}  
-            
+       else {
+        document.getElementById('Error6').innerHTML="<b>The password you entered does not match your password or is not valid<b>";
+        correctPassword=false;
+    } 
+    
+   }
+    //else return a tick message and return the corectName as true 
+    else {
+        document.getElementById('Error6').innerHTML="<b>The password you entered does not match your password or is not valid<b>";
+        correctPassword=false;
+    }   
+    return correctPassword;
+}       
             
             
             

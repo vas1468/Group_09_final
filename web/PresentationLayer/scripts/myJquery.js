@@ -15,6 +15,7 @@
                         validateUsername();
                         validateEmail();
                         validatePassword();
+                        confirmPassword();
                         event.preventDefault();
                     }
                     else{
@@ -42,6 +43,9 @@
                    //on keyup call the function that validates the analysis
                   $('#password').keyup(function() {
                     validatePassword();
+                });
+                   $('#cpassword').keyup(function() {
+                    confirmPassword();
                 });
             });
 
