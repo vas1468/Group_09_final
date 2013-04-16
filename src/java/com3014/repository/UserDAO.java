@@ -19,16 +19,16 @@ public class UserDAO implements IUserDAO {
     private JdbcTemplate jdbcTemplateObject;
     
   @Override
-        public void setDataSource(DataSource ds) {
+        public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
         this.jdbcTemplateObject = new JdbcTemplate(dataSource);
     }
 
     @Override
-    public void create(Integer id, String name, String surname, String dateOfBirth, String email, String username, String password, String confirmed_password) {
-        String SQL = "insert into User (id,  name,  surname,  dateOfBirth,  email,  username,  password, confirmed_password) values (?, ?, ?, ?, ?, ?, ?, ?)";
+    public void create( String name, String surname, String dateOfBirth, String email, String username, String password, String confirmed_password) {
+        String SQL = "insert into USER (  name,  surname,  dateOfBirth,  email,  username,  password, confirmed_password) values (?, ?, ?, ?, ?, ?, ?)";
 
-        jdbcTemplateObject.update(SQL, id, name, surname, dateOfBirth, email, username, password, confirmed_password);
+        jdbcTemplateObject.update(SQL, name, surname, dateOfBirth, email, username, password, confirmed_password);
     }
 
     @Override

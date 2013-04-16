@@ -18,13 +18,12 @@ public interface IUserDAO {
     * This is the method to be used to initialize
     * database resources ie. connection.
     */
-   public void setDataSource(DataSource ds);
+   public void setDataSource(DataSource dataSource);
    /** 
     * This is the method to be used to create
     * a record in the User table.
     */
-   public void create(Integer id, 
-                      String name, 
+   public void create(String name, 
                       String surname, 
                       String dateOfBirth, 
                       String email, 
