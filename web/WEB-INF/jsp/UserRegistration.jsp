@@ -27,41 +27,43 @@
   </header>
   <div class="wrapper">
     <div class="border"></div>
-    <article>
+    <article class="fullwidth gallery ">
       <h3>User Registration Form</h3>
      
        <form id="grading" name="Data Collection" form action="/assignment/AssessGrades" method="post">
 
             
             <div>
-                <label for="name">Name:</label> <input type="text" name="name" id="name" />
+                <label for="valid">Name:</label> <input type="text" name="name" id="name" />
                 <span class="bold" id="Error1">Type your name!</span>
+                 <img class="transparant" id="okk"  src="PresentationLayer/images/ok.png" style="display:none" width="38" height="38" alt="ok"/>
             </div>
+   
 
             <div>
-                <label for="score">Surname:</label> <input type="text" name="score" id="surname"  />
+                <label for="valid">Surname:</label> <input type="text" name="score" id="surname"  />
                 <span class="bold" id="Error2">Type your surname!</span>
             </div>
 
             <div>
-                <label for="score">Username:</label> <input type="text" name="score" id="username" />
+                <label for="valid">Username:</label> <input type="text" name="score" id="username" />
                 <span class="bold" id="Error3">Type your username!</span>
             </div>
             <div>
-                <label for="score">Email:</label> <input type="text" name="score" id="email" />
+                <label for="valid">Email:</label> <input type="text" name="score" id="email" />
                 <span class="bold" id="Error4">Type a valid email!</span>
             </div>
             <div>
-                <label for="score"> Password</label> <input type="password" name="score" id="password" />
+                <label for="valid"> Password:</label> <input type="password" name="score" id="password" />
                 <span class="bold" id="Error5">Type a password!</span>
             </div>
             <div>
-                <label for="feedback">Feedback:</label> <textarea class="bold" name="feedback" id="feedback" rows="4" cols="40" wrap="physical" >
-Write your feedback here
-                </textarea> 
+                <label for="valid">Confirm Password:</label> <input type="password" name="score" id="cpassword" />
+                <span class="bold" id="Error6">Type a password!</span>
             </div>
+           <div>
             <input id="submit" type="submit" value="Submit"  >
-
+           </div>
         </form> 
     
  
