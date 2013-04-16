@@ -5,53 +5,63 @@
 package com3014.repository;
 
 import com3014.models.User;
-import java.util.Date;
 import java.util.List;
-import javax.activation.DataSource;
+import javax.sql.DataSource;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
  *
  * @author VASILIS
  */
-public interface UserDAO {
+public class UserDAO implements IUserDAO {
+
+    private DataSource dataSource;
+    private JdbcTemplate jdbcTemplateObject;
     
-/** 
-    * This is the method to be used to initialize
-    * database resources ie. connection.
-    */
-   public void setDataSource(DataSource ds);
-   /** 
-    * This is the method to be used to create
-    * a record in the User table.
-    */
-   public void create(Integer id, 
-                      String name, 
-                      String surname, 
-                      Date dateOfBirth, 
-                      String email, 
-                      String username, 
-                      String password, 
-                      String confirmed_password);
-   /** 
-    * This is the method to be used to list down
-    * a record from the User table corresponding
-    * to a passed user id.
-    */
-   public User getUser(Integer id);
-   /** 
-    * This is the method to be used to list down
-    * all the records from the User table.
-    */
-   public List<User> listUsers();
-   /** 
-    * This is the method to be used to delete
-    * a record from the Student table corresponding
-    * to a passed user id.
-    */
-   public void delete(Integer id);
-   /** 
-    * This is the method to be used to update
-    * a record into the User table.
-    */
-   public void update(Integer id);
+  @Override
+        public void setDataSource(DataSource ds) {
+        this.dataSource = dataSource;
+        this.jdbcTemplateObject = new JdbcTemplate(dataSource);
+    }
+
+    @Override
+    public void create(Integer id, String name, String surname, String dateOfBirth, String email, String username, String password, String confirmed_password) {
+        String SQL = "insert into User (id,  name,  surname,  dateOfBirth,  email,  username,  password, confirmed_password) values (?, ?, ?, ?, ?, ?, ?, ?)";
+
+        jdbcTemplateObject.update(SQL, id, name, surname, dateOfBirth, email, username, password, confirmed_password);
+    }
+
+    @Override
+    public User getUser(Integer id) {
+        String SQL = "select * from User where id = ?";
+        User user = jdbcTemplateObject.queryForObject(SQL,
+                new Object[]{id}, new UserMapper());
+        return user;
+    }
+
+    @Override
+    public List<User> listUsers() {
+        String SQL = "select * from User";
+        List<User> users = jdbcTemplateObject.query(SQL,
+                new UserMapper());
+        return users;
+    }
+
+    @Override
+    public void delete(Integer id) {
+         String SQL = "delete from User where id = ?";
+      jdbcTemplateObject.update(SQL, id);
+      System.out.println("Deleted Record with ID = " + id );
+      return;
+    }
+
+    @Override
+    public void update(Integer id,String username) {
+        String SQL = "update User set userame = ? where id = ?";
+      jdbcTemplateObject.update(SQL, username, id);
+      System.out.println("Updated Record with ID = " + id );
+      return;
+    }
+
+
 }
