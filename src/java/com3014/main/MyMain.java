@@ -30,7 +30,7 @@ public class MyMain {
 
         userDAO.create( "Marios", "herodotou", "12/ 2 /2012", "marios@gmail.com", "marios123", "123456", "123456");
         userDAO.create( "Nio", "antoniou", "2 / 2 / 2012", "nio@gmail.com", "nio123", "123456", "123456");
-        userDAO.create( "vasilis", "koupparis", "18 / 5 / 2012)", "vas@gmail.com", "vas666", "123456", "123456");
+        userDAO.create( "vasilis", "koupparis", "18 / 5 / 2012", "vas@gmail.com", "vas666", "123456", "123456");
 
         System.out.println("------Listing Multiple Records--------");
         List<User> users = userDAO.listUsers();

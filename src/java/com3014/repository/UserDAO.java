@@ -57,7 +57,7 @@ public class UserDAO implements IUserDAO {
 
     @Override
     public void update(Integer id,String username) {
-        String SQL = "update User set userame = ? where id = ?";
+        String SQL = "update User set username = ? where id = ?";
       jdbcTemplateObject.update(SQL, username, id);
       System.out.println("Updated Record with ID = " + id );
       return;
