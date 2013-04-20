@@ -12,7 +12,7 @@
     </head>
     <body>
         <h2>Student Information</h2>
-        <form:form method="POST" action="/addUser.htm">
+        <form:form method="POST" action="/Group_09_final/addUser.htm">
             <table>
                 <tr>
                     <td><form:label path="name">Name:</form:label></td>
@@ -51,39 +51,5 @@
         </form:form>
     </body>
 </html>
-<form:form method="POST" action="/assignment/AssessGrades">
-
-    <div>
-        <label for="valid">Name:</label> <input type="text" name="name" id="name" />
-        <span class="bold" id="Error1">Type your name!</span>
-        <img class="transparant" id="okk"  src="PresentationLayer/images/ok.png" style="display:none" width="38" height="38" alt="ok"/>
-    </div>
-
-
-    <div>
-        <label for="valid">Surname:</label> <input type="text" name="score" id="surname"  />
-        <span class="bold" id="Error2">Type your surname!</span>
-    </div>
-
-    <div>
-        <label for="valid">Username:</label> <input type="text" name="score" id="username" />
-        <span class="bold" id="Error3">Type your username!</span>
-    </div>
-    <div>
-        <label for="valid">Email:</label> <input type="text" name="score" id="email" />
-        <span class="bold" id="Error4">Type a valid email!</span>
-    </div>
-    <div>
-        <label for="valid"> Password:</label> <input type="password" name="score" id="password" />
-        <span class="bold" id="Error5">Type a password!</span>
-    </div>
-    <div>
-        <label for="valid">Confirm Password:</label> <input type="password" name="score" id="cpassword" />
-        <span class="bold" id="Error6">Type a password!</span>
-    </div>
-    <div>
-        <input id="submit" type="submit" value="Submit"  >
-    </div>
-</form:form>
 
 

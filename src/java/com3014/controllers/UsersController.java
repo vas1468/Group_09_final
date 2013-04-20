@@ -9,6 +9,8 @@ package com3014.controllers;
  * @author VASILIS
  */
 import com3014.models.User;
+import com3014.repository.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,23 +21,36 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
-@SessionAttributes
 public class UsersController {
-
+    
+ @Autowired
+    private UserService userService;
+ 
+ 
+    
+   @RequestMapping(value="/UserRegistration.htm", method=RequestMethod.GET)
+   public ModelAndView user_registration_page(){
+       //userService.delete(1);
+       return new ModelAndView("registration_test","command",new User());
+   }
    
-    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
-    public String addContact(@ModelAttribute("user")
-                            User user, BindingResult result) {
-         
-        System.out.println("First Name:" + user.getName() + 
-                    "Last Name:" + user.getSurname());
-         
-        return "redirect:users.html";
-    }
+   @RequestMapping(value ="/addUser.htm",method=RequestMethod.POST)
+   public String addUser(@ModelAttribute("MamasSecretRecipesWEBMVCSpring") User user, ModelMap model){
+      
+       model.addAttribute("name",user.getName());
+        model.addAttribute("confirmed_password",user.getConfirmed_password());
+         model.addAttribute("surname",user.getSurname());
+          model.addAttribute("dateOfBirth",user.getDateOfBirth());
+           model.addAttribute("email",user.getEmail());
+            model.addAttribute("password",user.getPassword());
+             model.addAttribute("username",user.getUsername());
+          // userService.create(null, null, null, null, null, null, null);
+                userService.create( user.getName(), user.getSurname(), user.getDateOfBirth(), user.getEmail(), user.getUsername(), user.getPassword(), user.getPassword());
      
-    @RequestMapping("/users")
-    public ModelAndView showContacts() {
-         
-        return new ModelAndView("user", "command", new User());
-    }
+       return "result";
+   }
+   
+    
+    
+    
 }
