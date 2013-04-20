@@ -11,15 +11,22 @@ redirects to log ing page
 log in page
 !-->   
     <http auto-config="true">
-        <intercept-url pattern="/index.htm" access="ROLE_USER" />
+        <intercept-url pattern="/**" access="ROLE_USER" />
       
     </http>
     <authentication-manager>
         <authentication-provider>
-            
-            <user-service>
-                <user name="com3014" password="123456"  authorities="ROLE_USER" />
-            </user-service>
+          <jdbc-user-service data-source-ref="dataSource"
+ 
+		   users-by-username-query="
+		      select username,password,id
+		      from user where username=?" 
+ 
+		   authorities-by-username-query="
+		      select u.username, ur.authority from user u, user_details ur 
+		      where u.id = ur.id and u.username =?  " 
+ 
+		/>
         </authentication-provider>
     </authentication-manager>
 </beans:beans>
