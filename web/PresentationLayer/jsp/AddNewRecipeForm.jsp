@@ -5,9 +5,9 @@
         <title>Add New Recipe Form </title>
         <script src="PresentationLayer/scripts/jQuery_v1_6_4.js"></script>
         <!--This is a reference to my jquery code that helps to call the functions that validate the information parsed to the form-->
-        <script src="PresentationLayer/scripts/myJquery.js"></script>
+        <script src="PresentationLayer/scripts/myJQuery_addRecipe.js"></script>
         <!--This is a reference to my fanctions that are used to validate the information-->
-        <script src="PresentationLayer/scripts/my_functions.js" type="text/javascript"></script>
+        <script src="PresentationLayer/scripts/addRecipeValidator.js" type="text/javascript"></script>
         <link rel="stylesheet" href="PresentationLayer/styles/registrationForm.css" type="text/css"></link>
         <link href="PresentationLayer/styles/style.css" rel="stylesheet" type="text/css" media="screen" />
     </head>
@@ -31,6 +31,7 @@
                     <h3>Add New Recipe Form</h3>
                      <br/>
                      <br/>
+                     <form id="addRecipe" name="addRecipe" action="" method="post">
                     <table>
 
                         <tr> 
@@ -53,9 +54,11 @@
                          <tr><td><br/></td> </tr>
                         <tr> 
                             <td> <label for="difficulty"> Level of Difficulty:</label> </td> 
-                            <td> <input type="radio" name="easy" value="easy">Easy<br>
-                                <input type="radio" name="medium" value="medium">Medium <br >
-                                <input type="radio" name="hard" value="hard">Hard <br> </td>
+                            <td>
+                                <input type="radio" name="difficulty" value="easy" checked>Easy<br>
+                                <input type="radio" name="difficulty" value="medium">Medium <br >
+                                <input type="radio" name="difficulty" value="hard">Hard <br>
+                            </td>
                             <td><span class="bold" id="ErrorPreparationTime">&nbsp;Type the time needed for the food preparation!</span></td>
                         </tr>
                          <tr><td><br/></td> </tr>
@@ -74,9 +77,9 @@
                         <tr>
                             <td> <label for="main_ingredients"> Main Ingredients: </label></td> 
 
-                            <td> <input type="text" name="ingredient1" id="ingredient1" value="" size="27"> <br >
-                                <input type="text" name="ingredient2" id="ingredient2" value="" size="27"> <br >
-                                <input type="text" name="ingredient3" id="ingredient3" value="" size="27"> <br >
+                            <td> <input type="text" name="ingredient1" id="ingredient1" value="" size="27">  <span class="bold" id="ErrorIngredient1"></span>
+                                <input type="text" name="ingredient2" id="ingredient2" value="" size="27">  <span class="bold" id="ErrorIngredient2"></span>
+                                <input type="text" name="ingredient3" id="ingredient3" value="" size="27"> <span class="bold" id="ErrorIngredient3"></span>
                             </td>
                             <td><span class="bold" id="ErrorIngredient">&nbsp;Type the method for the recipie accomplishment!</span> </td>
 
@@ -98,30 +101,31 @@
                                     <tr>       
 
                                         <td>
-                                            <input type="checkbox" name="asian" value="Indian">Indian <br/>
-                                            <input type="checkbox" name="thai" value="Thai">Thai <br/>
-                                            <input type="checkbox" name="chinese" value="Thai">Chinese <br/>
-                                            <input type="checkbox" name="oriental" value="Thai">Oriental <br />
+                                            <input type="radio" name="cuisine" value="Indian">Indian <br/>
+                                            <input type="radio" name="cuisine" value="Thai">Thai <br/>
+                                            <input type="radio" name="cuisine" value="Thai">Chinese <br/>
+                                            <input type="radio" name="cuisine" value="Thai">Oriental <br />
                                         </td>
 
                                         <td>
 
-                                            <input type="checkbox" name="french" value="french">French <br />
-                                            <input type="checkbox" name="oriental" value="italian">Italian<br/>
-                                            <input type="checkbox" name="greek" value="greek">Greek<br/>
-                                            <input type="checkbox" name="cypriot" value="cypriot">Cypriot  
+                                            <input  type="radio" name="cuisine" value="french">French <br />
+                                            <input  type="radio" name="cuisine" value="italian">Italian<br/>
+                                            <input  type="radio" name="cuisine" value="greek">Greek<br/>
+                                            <input  type="radio" name="cuisine" value="cypriot">Cypriot  
                                         </td>   
                                         <td> 
 
-                                            <input type="checkbox" name="mexican" value="mexican"> Mexican<br/>
-                                            <input type="checkbox" name="carribean" value="carribean">Carribean<br/>
-                                            <input type="checkbox" name="african" value="african">African <br/>
+                                            <input  type="radio" name="cuisine" value="mexican"> Mexican<br/>
+                                            <input  type="radio" name="cuisine" value="carribean">Carribean<br/>
+                                            <input  type="radio" name="cuisine" value="african">African <br/>
                                         </td>     
                                         <td>     
 
-                                            <input type="checkbox" name="international" value="international"> International <br/>
-                                            <input type="checkbox" name="american" value="american">American <br/>
-                                            <input type="checkbox" name="arabic" value="arabic">Arabic <br/>
+                                            <input  type="radio" name="cuisine" value="international"> International <br/>
+                                            <input  type="radio" name="cuisine" value="american">American <br/>
+                                            <input  type="radio" name="cuisine" value="arabic">Arabic <br/>
+                                            <input  type="radio" name="cuisine" value="other" checked>Other <br/>
 
                                         </td>
                                     </tr>
@@ -130,7 +134,7 @@
                         <tr>
                             <td> <label for="recipeType"> Recipe Type: </label></td>
                             <td> <select>
-                                    <option value="breakfast">--Select a type--</option>
+                                    <option id="selectType" value="selectType">--Select a type--</option>
                                     <option value="breakfast">Breakfast</option>
                                     <option value="breakfast">Baking</option>
                                     <option value="drink">Drink</option>
@@ -144,6 +148,7 @@
                                     <option value="side">Side Dish</option>
                                     <option value="vegeterian">Vegeterian</option>
                                     <option value="pie">Pie</option>
+                                    <option value="other">Other</option>
                                 </select>
 
                         </tr>
@@ -156,10 +161,11 @@
                             <td>  </td>
 
                             <td><input class="button" id="submit" type="submit" value="Sumbit"> &nbsp;
-                                <input class="button" type="reset" value="Reset">
+                                <button class="button" type="reset" value="Reset" > Reset </button>
                             </td>
                         </tr>
                     </table>
+                     </form>
                 </article> 
                 <footer>
 

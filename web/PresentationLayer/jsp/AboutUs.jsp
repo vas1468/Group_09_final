@@ -48,9 +48,33 @@
                 <div class="border"></div>
                 <article class="fullwidth gallery">
                     <h3>About Us</h3>
+                          <div class="home-widget">
+          <h3>Lorem Ipsum</h3>
+          <img src="images/home/3.jpg" width="300" alt="" />
+          <p>Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae.</p>
+        </div>
+        <div class="home-widget">
+          <h3>Lorem Ipsum</h3>
+          <img src="images/home/4.jpg" width="300" alt="" />
+          <p>Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae.</p>
+        </div>
+        <div class="home-widget">
+          <h3>Lorem Ipsum</h3>
+          <img src="images/home/1.jpg" width="300" alt="" />
+          <p>Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae.</p>
+        </div>
+          <h3>Lorem Ipsum</h3>
+          <img src="images/home/1.jpg" width="300" alt="" />
+          <p>Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae.</p>
+        </div>      
+                    
+                    
                     
                     <div id="googleMap" style="width:625;height:250"></div>
            
+                    
+                    
+                    
                     <br />
                     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
                     <form action="#" method="post">
@@ -81,38 +105,15 @@
                     <br>
                 </article>
                 <aside class="sidebar">
-                    <h3>From The Blog</h3>
-                    <ul class="blog">
-                        <li><a href="#">Lorem Ipsum Dolor</a><br/>
-                            Orciint erdum condimen terdum nulla mcorper elit nam curabitur... </li>
-                        <li><a href="#">Praesent Et Eros</a><br/>
-                            Orciint erdum condimen terdum nulla mcorper elit nam curabitur... </li>
-                        <li><a href="#">Suspendisse In Neque</a><br/>
-                            Orciint erdum condimen terdum nulla mcorper elit nam curabitur... </li>
-                        <li><a href="#">Suspendisse In Neque</a><br/>
-                            Orciint erdum condimen terdum nulla mcorper elit nam curabitur... </li>
-                    </ul>
-                    <div class="border3"></div>
-                    <h3>Sidebar Widget</h3>
-                    <img src="images/home/1.jpg" width="280" alt="" />
-                    <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. In turpis pulvinar facilisis. Ut felis.<br>
-                        <a href="" class="right" style="padding-top:7px"><strong>Continue Reading &raquo;</strong></a></p>
-                </aside>
-                <div class="border2"></div>
-                <br>
-            </div>
+                   
         </article>
             <footer>
-                <div class="border"></div>
+         
   
                 <div class="footer-widget">
                    
-                <div class="footer-widget">
-                    <h4>We Are Social!</h4>
-                    <div id="social"> <a href="http://twitter.com/priteshgupta" class="s3d twitter"> Twitter <span class="icons twitter"></span> </a> <a href="http://www.facebook.com/priteshgupta" class="s3d facebook"> Facebook <span class="icons facebook"></span> </a> <a href="http://forrst.com/people/priteshgupta" class="s3d forrst"> Forrst <span class="icons forrst"></span> </a> <a href="http://www.flickr.com/photos/priteshgupta" class="s3d flickr"> Flickr <span class="icons flickr"></span> </a> <a href="#" class="s3d designmoo"> Designmoo <span class="icons designmoo"></span> </a> </div>
-                </div>
-                <div class="border2"></div>
-                <br />
+        
+                  
                  <span class="copyright"><span class="left"><br />
         &copy; Copyright 2013 - All Rights Reserved - Group 9 Advanced Challenges in Web Technologies - University of Surrey </span><span class="right"><br /></footer>
         </div>
