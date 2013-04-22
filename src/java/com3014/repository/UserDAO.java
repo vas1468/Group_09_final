@@ -29,6 +29,7 @@ public class UserDAO implements IUserDAO {
         String SQL = "insert into USER (  name,  surname,  dateOfBirth,  email,  username,  password, confirmed_password) values (?, ?, ?, ?, ?, ?, ?)";
 
         jdbcTemplateObject.update(SQL, name, surname, dateOfBirth, email, username, password, confirmed_password);
+
     }
 
     @Override
