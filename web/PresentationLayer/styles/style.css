@@ -790,3 +790,10 @@ form div label{
     float:left;
     width:20%;
 }
+form div img{
+    display:none; 
+    width:15px ;
+    height:15px;
+    background-color:transparent;
+    border-style: none;
+}

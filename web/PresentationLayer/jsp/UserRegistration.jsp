@@ -35,8 +35,10 @@
             
             <div>
                 <label for="valid">Name:</label> <input type="text" name="name" id="name" />
+                
+                <img class="transparant" id="okk"  src="PresentationLayer/images/ok.png"  alt="ok"/>
                 <span class="bold" id="Error1">Type your name!</span>
-                 <img class="transparant" id="okk"  src="PresentationLayer/images/ok.png" style="display:none" width="38" height="38" alt="ok"/>
+                 
             </div>
    
 
