@@ -47,10 +47,15 @@ public class UsersController {
           // userService.create(null, null, null, null, null, null, null);
                 userService.create( user.getName(), user.getSurname(), user.getDateOfBirth(), user.getEmail(), user.getUsername(), user.getPassword(), user.getPassword());
      
-       return "result";
+       return "UserRegistrationConfirmation";
    }
    
     
-    
+   @RequestMapping(value="/addnewuser/userregistration.htm", method=RequestMethod.GET)
+   public String user_registration_page3(){
+       //userService.delete(1);
+       return "UserRegistrationConfirmation";
+   }
+      
     
 }

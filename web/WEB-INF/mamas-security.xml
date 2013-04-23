@@ -11,8 +11,8 @@ redirects to log ing page
 log in page
 !-->   
     <http auto-config="true">
-        <intercept-url pattern="/**" access="ROLE_USER" />
-      
+        <intercept-url pattern="/*" access="ROLE_USER" />
+        <intercept-url pattern="/addnewuser/userregistration.htm" />
     </http>
     <authentication-manager>
         <authentication-provider>
