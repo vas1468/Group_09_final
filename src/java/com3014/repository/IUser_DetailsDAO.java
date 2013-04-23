@@ -25,7 +25,7 @@ public interface IUser_DetailsDAO {
     */
    public void create(Integer user_role_id, 
                       Integer id, 
-                      String user_role);
+                      String authority);
    /** 
     * This is the method to be used to list down
     * a record from the User table corresponding
