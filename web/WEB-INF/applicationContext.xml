@@ -35,7 +35,7 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/mamassecret"/>
         <property name="username" value="root"/>
-        <property name="password" value=""/>
+        <property name="password" value="qazwsxedc"/>
     </bean> 
 <!-- ============================================================= -->
  <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
