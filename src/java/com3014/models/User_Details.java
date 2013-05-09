@@ -12,7 +12,7 @@ public class User_Details {
     
     private int id;
     private int user_role_id;
-    private String user_role;
+    private String authority;
 
     public int getId() {
         return id;
@@ -30,14 +30,13 @@ public class User_Details {
         this.user_role_id = user_role_id;
     }
 
-    public String getUser_role() {
-        return user_role;
+    public String getAuthority() {
+        return authority;
     }
 
-    public void setUser_role(String user_role) {
-        this.user_role = user_role;
+    public void setAuthority(String authority) {
+        this.authority = authority;
     }
-    
-    
-    
+
+   
 }
